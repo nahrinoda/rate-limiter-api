@@ -1,4 +1,4 @@
-import { FixedWindowCounter } from '../../../rateLimiters/FixedWindowCounter';
+import { FixedWindowCounter } from '../../rateLimiters/FixedWindowCounter';
 
 // Initialize the FixedWindowCounter with a window size of 60 seconds
 const fixedWindowCounter = new FixedWindowCounter(60);

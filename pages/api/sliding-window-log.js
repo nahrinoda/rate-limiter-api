@@ -1,4 +1,4 @@
-import { SlidingWindowLog } from '../../../rateLimiters/SlidingWindowLog';
+import { SlidingWindowLog } from '../../rateLimiters/SlidingWindowLog';
 
 // Initialize the SlidingWindowLog with a window size of 60 seconds
 const slidingWindowLog = new SlidingWindowLog(60);

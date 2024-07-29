@@ -1,4 +1,4 @@
-import { LeakingBucket } from '../../../rateLimiters/LeakingBucket';
+import { LeakingBucket } from '../../rateLimiters/LeakingBucket';
 
 // Initialize the LeakingBucket with a bucket size of 100 and a leak rate of 10 requests per second
 const leakingBucket = new LeakingBucket(100, 10);

@@ -1,4 +1,4 @@
-import { SlidingWindowCounter } from '../../../rateLimiters/SlidingWindowCounter';
+import { SlidingWindowCounter } from '../../rateLimiters/SlidingWindowCounter';
 
 // Initialize the SlidingWindowCounter with a window size of 60 seconds and 10 buckets
 const slidingWindowCounter = new SlidingWindowCounter(60, 10);

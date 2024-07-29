@@ -1,4 +1,4 @@
-import { TokenBucket } from '../../../rateLimiters/TokenBucket';
+import { TokenBucket } from '../../rateLimiters/TokenBucket';
 
 // Initialize the TokenBucket with a bucket size of 100 and a refill rate of 10 tokens per second
 const tokenBucket = new TokenBucket(100, 10);
