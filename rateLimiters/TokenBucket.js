@@ -26,7 +26,7 @@ export class TokenBucket {
     }
     const remaining = this.tokens;
     const resetTime = new Date(Date.now() + (1000 / this.refillRate) * (this.bucketSize - this.tokens)).toISOString();
-    return { count: this.tokens, remaining, resetTime };
+    return { count: this.bucketSize - remaining, remaining, resetTime };
   }
 
   refill() {
