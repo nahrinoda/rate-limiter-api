@@ -8,7 +8,7 @@
  * - lastLeak: Timestamp of the last leak operation.
  *
  * Methods:
- * - addRequest(): Adds a request to the bucket. Returns true if the request is allowed, false otherwise.
+ * - addRequest(): Adds a request to the bucket. Returns an object containing count, remaining, and resetTime.
  * - leak(): Removes tokens from the bucket based on the time elapsed since the last leak.
  */
 export class LeakingBucket {
@@ -21,11 +21,11 @@ export class LeakingBucket {
 
   addRequest() {
     this.leak();
-    if (this.tokens < this.bucketSize) {
-      this.tokens++;
-      return true;
-    }
-    return false;
+    this.tokens++;
+    const count = this.tokens;
+    const remaining = Math.max(0, this.bucketSize - this.tokens);
+    const resetTime = new Date(this.lastLeak + 1000 / this.leakRate * (this.bucketSize - this.tokens)).toISOString();
+    return { count, remaining, resetTime };
   }
 
   leak() {
